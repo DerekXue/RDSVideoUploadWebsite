@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RDSICA" Class="RDSICADataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\RDSICA.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TutorialCategory" Member="TutorialCategories">
+    <Type Name="TutorialCategory">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TutorialCategory_TutorialItem" Member="TutorialItems" ThisKey="CategoryID" OtherKey="CategoryID" Type="TutorialItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TutorialItem" Member="TutorialItems">
+    <Type Name="TutorialItem">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdminID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TutorialItem_tblVideo" Member="tblVideos" ThisKey="ItemID" OtherKey="Id" Type="tblVideo" />
+      <Association Name="TutorialCategory_TutorialItem" Member="TutorialCategory" ThisKey="CategoryID" OtherKey="CategoryID" Type="TutorialCategory" IsForeignKey="true" />
+      <Association Name="User_TutorialItem" Member="User" ThisKey="UserID" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="Admin_TutorialItem" Member="Admin" ThisKey="AdminID" OtherKey="AdminID" Type="Admin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdminID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_TutorialItem" Member="TutorialItems" ThisKey="UserId" OtherKey="UserID" Type="TutorialItem" />
+      <Association Name="Admin_User" Member="Admin" ThisKey="AdminID" OtherKey="AdminID" Type="Admin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdminName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Admin_TutorialItem" Member="TutorialItems" ThisKey="AdminID" OtherKey="AdminID" Type="TutorialItem" />
+      <Association Name="Admin_User" Member="Users" ThisKey="AdminID" OtherKey="AdminID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVideos" Member="tblVideos">
+    <Type Name="tblVideo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VideoPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="TutorialItem_tblVideo" Member="TutorialItem" ThisKey="Id" OtherKey="ItemID" Type="TutorialItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

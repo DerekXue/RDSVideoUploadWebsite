@@ -1,0 +1,63 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat="server">
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs)
+
+    End Sub
+</script>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1454px;
+        }
+        .auto-style2 {
+            height: 22px;
+            font-size: xx-large;
+        }
+        .auto-style3 {
+            text-align: center;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+      <table style="font-family:Arial">
+    <tr>
+        <td style="width:800px; height:80px; background-color:#ccffff; 
+            text-align:center">
+            <h1 class="auto-style1">
+                Header&nbsp;</h1>
+        </td>
+    </tr>
+    <tr>
+        <td style="height:500px; background-color:#ccffcc; width:1800px; vertical-align:top">
+             <h3 class="auto-style3">content</h3>  
+                
+
+
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color:#ccffff; text-align:center" class="auto-style2">
+            <strong>Footer</strong></td>
+    </tr>
+    <tr>
+        <td style="background-color:#ccffff; text-align:center">
+            &nbsp;</td>
+    </tr>
+</table>
+
+
+    </form>
+</body>
+</html>

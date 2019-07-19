@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RDSICADataClasses">
+  <DataContextMoniker Name="/RDSICADataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7d8d0fc3-81e6-40f0-b33e-93503a3281c4" absoluteBounds="6.375, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/RDSICADataClassesDataContext/TutorialCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1293d68-46b0-4cea-a609-657df8c5ecd2" absoluteBounds="6.39, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca3d7bfb-b0e7-40d6-8a01-3c5ca4d75b56" absoluteBounds="4.625, 5.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RDSICADataClassesDataContext/TutorialItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="131d7e40-a2d2-4063-9039-8bc96cf14508" absoluteBounds="4.6400000000000006, 5.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5000005 : 3.06899251302083); (7.5000005 : 6.12853084029274); (6.625 : 6.12853084029274)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/RDSICADataClassesDataContext/TutorialCategory/TutorialCategory_TutorialItem" />
+      <nodes>
+        <classShapeMoniker Id="7d8d0fc3-81e6-40f0-b33e-93503a3281c4" />
+        <classShapeMoniker Id="ca3d7bfb-b0e7-40d6-8a01-3c5ca4d75b56" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4fc03022-6209-498e-8d04-a99b5e78b18a" absoluteBounds="1.875, 1.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RDSICADataClassesDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54d900e9-c4da-4207-8666-f8e9e2adc981" absoluteBounds="1.8900000000000001, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.53125 : 3.90549967447917); (3.53125 : 5.53125); (4.625 : 5.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RDSICADataClassesDataContext/User/User_TutorialItem" />
+      <nodes>
+        <classShapeMoniker Id="4fc03022-6209-498e-8d04-a99b5e78b18a" />
+        <classShapeMoniker Id="ca3d7bfb-b0e7-40d6-8a01-3c5ca4d75b56" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d68d75f3-4029-452d-9bee-7485e1193d86" absoluteBounds="1.125, 5.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/RDSICADataClassesDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="172f0b0b-8ebe-4425-9c8c-5ba886593c7b" absoluteBounds="1.1400000000000001, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 6.44794840494792); (4.625 : 6.44794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RDSICADataClassesDataContext/Admin/Admin_TutorialItem" />
+      <nodes>
+        <classShapeMoniker Id="d68d75f3-4029-452d-9bee-7485e1193d86" />
+        <classShapeMoniker Id="ca3d7bfb-b0e7-40d6-8a01-3c5ca4d75b56" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 5.875); (2.5 : 3.90549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RDSICADataClassesDataContext/Admin/Admin_User" />
+      <nodes>
+        <classShapeMoniker Id="d68d75f3-4029-452d-9bee-7485e1193d86" />
+        <classShapeMoniker Id="4fc03022-6209-498e-8d04-a99b5e78b18a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3b2dda78-0223-456d-8575-b7e559468961" absoluteBounds="8.5, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RDSICADataClassesDataContext/tblVideo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64353561-71b4-40c9-a56b-d23e892d613d" absoluteBounds="8.515, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 6.60596632509429); (9.5 : 6.60596632509429); (9.5 : 5.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RDSICADataClassesDataContext/TutorialItem/TutorialItem_tblVideo" />
+      <nodes>
+        <classShapeMoniker Id="ca3d7bfb-b0e7-40d6-8a01-3c5ca4d75b56" />
+        <classShapeMoniker Id="3b2dda78-0223-456d-8575-b7e559468961" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
